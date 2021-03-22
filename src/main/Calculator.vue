@@ -1,9 +1,11 @@
 <template>
-  <div class="calculator">
+  <div class="calculator"
+  >
+  
     <Display :value="displayValue" />
-    <Button label="AC" triple @onClick="clearMemory" />
+    <Button label="AC" triple @onClick="clearMemory"/>
     <Button label="/" operation @onClick="setOperation" />
-    <Button label="7" @onClick="addDigit" />
+    <Button label="7" @onClick="addDigit"  />
     <Button label="8" @onClick="addDigit" />
     <Button label="9" @onClick="addDigit" />
     <Button label="*" operation @onClick="setOperation" />
@@ -18,10 +20,13 @@
     <Button label="0" double @onClick="addDigit" />
     <Button label="." @onClick="addDigit" />
     <Button label="=" operation @onClick="setOperation" />
+
+
   </div>
 </template>
 
 <script>
+
 import Button from "../components/Button";
 import Display from "../components/Display";
 
@@ -36,6 +41,12 @@ export default {
     };
   },
   components: { Button, Display },
+  
+  mounted() {
+    window.addEventListener("keypress", k => {    
+      this.addDigit(String.fromCharCode(k.keyCode));    
+    });
+  }, // Função que adiciona, o modo de pressionar pelo teclado também
   methods: {
     clearMemory() {
       Object.assign(this.$data, this.$options.data());
@@ -65,14 +76,14 @@ export default {
         this.clearDisplay = !equals;
       }
     },
-    addDigit(n) {
-      if (n === "." && this.displayValue.includes(".")) {
+    addDigit(digito) {
+      if (digito === "." && this.displayValue.includes(".")) {
         return;
       }
 
       const clearDisplay = this.displayValue === "0" || this.clearDisplay;
       const currentValue = clearDisplay ? "" : this.displayValue;
-      const displayValue = currentValue + n;
+      const displayValue = currentValue + digito;
 
       this.displayValue = displayValue;
       this.clearDisplay = false;
