@@ -1,2 +1,1 @@
-# Calculadora
- Calculadora em Vue para estudos e treinamentos
+# Projetos em Vue.Js
