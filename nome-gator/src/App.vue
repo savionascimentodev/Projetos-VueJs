@@ -114,7 +114,20 @@
                 :key="domain.name"
                 class="list-group-item"
               >
-                {{ domain }}
+                <div class="row">
+                  <div class="col-md">
+                    {{ domain.name }}
+                  </div>
+                  <div class="col-md text-end">
+                    <a
+                      :href="domain.checkout"
+                      class="btn btn-warning"
+                      target="_blanck"
+                    >
+                      <span class="fa fa-shopping-cart"></span>
+                    </a>
+                  </div>
+                </div>
               </li>
             </ul>
           </div>
@@ -135,46 +148,40 @@ export default {
       prefix: '',
       sufix: '',
       prefixes: ['Air', 'Jet', 'Fly'],
-      sufixes: ['Hub', 'Station', 'Mart'],
-      domains: [
-        'AirHub',
-        'AirStation',
-        'AirMart',
-        'JetHub',
-        'JetStation',
-        'JetMart',
-        'FlyHub',
-        'FlyStation',
-        'FlyMart'
-      ]
+      sufixes: ['Hub', 'Station', 'Mart']
+    }
+  },
+  computed: {
+    domains() {
+      const domains = []
+      for (const prefix of this.prefixes) {
+        for (const sufix of this.sufixes) {
+          const name = prefix + sufix
+          const url = name.toLowerCase()
+          const checkout = `https://checkout.hostgator.com.br/?a=add&sld=${url}&tld=.com`
+          domains.push({
+            name,
+            checkout
+          })
+        }
+      }
+      return domains
     }
   },
   methods: {
     addPrefix(prefix) {
       this.prefixes.push(prefix)
       this.prefix = ''
-      this.generate()
     },
     addSufix(sufix) {
       this.sufixes.push(sufix)
       this.sufix = ''
-      this.generate()
-    },
-    generate() {
-      this.domains = []
-      for (const prefix of this.prefixes) {
-        for (const sufix of this.sufixes) {
-          this.domains.push(prefix + sufix)
-        }
-      }
     },
     deletePrefix(prefix) {
       this.prefixes.splice(this.prefixes.indexOf(prefix), 1)
-      this.generate()
     },
     deleteSufix(sufix) {
       this.sufixes.splice(this.sufixes.indexOf(sufix), 1)
-      this.generate()
     }
   }
 }
