@@ -23,15 +23,36 @@
                     :key="prefix"
                     class="list-group-item"
                   >
-                    {{ prefix }}
+                    <div class="row">
+                      <div class="col-md">
+                        {{ prefix }}
+                      </div>
+                      <div class="col-md text-end">
+                        <button
+                          class="btn btn-danger"
+                          @click="deletePrefix(prefix)"
+                        >
+                          <span class="fa fa-trash"></span>
+                        </button>
+                      </div>
+                    </div>
                   </li>
                 </ul>
                 <br />
-                <input
-                  type="text"
-                  placeholder="Digite o prefixo"
-                  class="form-control"
-                />
+                <div class="input-group">
+                  <input
+                    v-model="prefix"
+                    @keyup.enter="addPrefix(prefix)"
+                    type="text"
+                    placeholder="Digite o prefixo"
+                    class="form-control"
+                  />
+                  <div class="input-group-append">
+                    <button class="btn btn-success" @click="addPrefix(prefix)">
+                      <span class="fa fa-plus"></span>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -47,15 +68,36 @@
                     :key="sufix"
                     class="list-group-item"
                   >
-                    {{ sufix }}
+                    <div class="row">
+                      <div class="col-md">
+                        {{ sufix }}
+                      </div>
+                      <div class="col-md text-end">
+                        <button
+                          class="btn btn-danger"
+                          @click="deleteSufix(sufix)"
+                        >
+                          <span class="fa fa-trash"></span>
+                        </button>
+                      </div>
+                    </div>
                   </li>
                 </ul>
                 <br />
-                <input
-                  type="text"
-                  placeholder="Digite o sufixo"
-                  class="form-control"
-                />
+                <div class="input-group">
+                  <input
+                    v-model="sufix"
+                    @keyup.enter="addSufix(sufix)"
+                    type="text"
+                    placeholder="Digite o sufixo"
+                    class="form-control"
+                  />
+                  <div class="input-group-append">
+                    <button class="btn btn-success" @click="addSufix(sufix)">
+                      <span class="fa fa-plus"></span>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -90,6 +132,8 @@ export default {
   name: 'App',
   data() {
     return {
+      prefix: '',
+      sufix: '',
       prefixes: ['Air', 'Jet', 'Fly'],
       sufixes: ['Hub', 'Station', 'Mart'],
       domains: [
@@ -103,6 +147,34 @@ export default {
         'FlyStation',
         'FlyMart'
       ]
+    }
+  },
+  methods: {
+    addPrefix(prefix) {
+      this.prefixes.push(prefix)
+      this.prefix = ''
+      this.generate()
+    },
+    addSufix(sufix) {
+      this.sufixes.push(sufix)
+      this.sufix = ''
+      this.generate()
+    },
+    generate() {
+      this.domains = []
+      for (const prefix of this.prefixes) {
+        for (const sufix of this.sufixes) {
+          this.domains.push(prefix + sufix)
+        }
+      }
+    },
+    deletePrefix(prefix) {
+      this.prefixes.splice(this.prefixes.indexOf(prefix), 1)
+      this.generate()
+    },
+    deleteSufix(sufix) {
+      this.sufixes.splice(this.sufixes.indexOf(sufix), 1)
+      this.generate()
     }
   }
 }
