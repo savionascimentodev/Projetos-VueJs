@@ -8,7 +8,6 @@
 
 ![License-Mit](https://img.shields.io/badge/license-MIT-lightseagreen)
 ![VueJS](https://img.shields.io/badge/Vue.js-35495E?style=flat&logo=vuedotjs&logoColor=4FC08D)
-![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
 
 <p align="center">
     <a href="#projects">Projetos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -37,9 +36,7 @@ Repositório criado para exibição de projetos feitos usando **Vue.js**.
 
 Projeto feito com **Vue.js**(composition api) e **TailwindCss**, que consiste em um jogo da velha de dois jogadores, veja o projeto aqui: [Projeto](https://projetos-vue-js.vercel.app/), para saber mais sobre o projeto veja o [Readme](https://github.com/savionascimentodev/Projetos-VueJs/tree/main/tic-tac-toe) dele.
 
-
-![tic-tac-toe-01](./assets/tic-tac-toe-desktop.png)
-
+<img src="https://raw.githubusercontent.com/savionascimentodev/Projetos-VueJs/main/assets/tic-tac-toe-desktop.png" width="300">
 
 ---
 
