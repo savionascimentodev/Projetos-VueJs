@@ -35,13 +35,11 @@ Repositório criado para exibição de projetos feitos usando **Vue.js**.
 
 #### ❌⭕ Tic Tac Toe
 
-Projeto feito com **Vue.js**(composition api) e **TailwindCss**, que consiste em um jogo da velha de dois jogadores, veja o projeto aqui: [Projeto](https://projetos-vue-js.vercel.app/).
+Projeto feito com **Vue.js**(composition api) e **TailwindCss**, que consiste em um jogo da velha de dois jogadores, veja o projeto aqui: [Projeto](https://projetos-vue-js.vercel.app/), para saber mais sobre o projeto veja o [Readme](https://github.com/savionascimentodev/Projetos-VueJs/tree/main/tic-tac-toe) dele.
+
 
 ![tic-tac-toe-01](./assets/tic-tac-toe-desktop.png)
 
-#### Mobile Screenshot:
-
-![tic-tac-toe-02](./assets/tic-tac-toe-mobile.png)
 
 ---
 
