@@ -1,9 +1,28 @@
-### Projeto com vue.js e tailwind css de um jogo da velha
+<div align="center">
 
-# Vue 3 + Vite
+### ❌⭕ Tic Tac Toe
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+![VueJS](https://img.shields.io/badge/Vue.js-35495E?style=flat&logo=vuedotjs&logoColor=4FC08D)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
 
-## Recommended IDE Setup
+<p align="center">
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+</div>
+
+Projeto com **Vue.js** e **TailwindCss** de um jogo da velha.
+
+---
+
+### Funcionalidades
+
+- Jogue jogo da velha com um amigo :);
+
+### 🚧 Layout
+
+##### Desktop Screenshot
+
+<img src="https://raw.githubusercontent.com/savionascimentodev/Projetos-VueJs/main/assets/tic-tac-toe-desktop.png" width="400">
+
+##### Mobile Screenshot
+
+<img src="https://raw.githubusercontent.com/savionascimentodev/Projetos-VueJs/main/assets/tic-tac-toe-mobile.png" width="180">
