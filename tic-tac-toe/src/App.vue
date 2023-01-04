@@ -8,7 +8,7 @@ const board = ref([
   ['', '', '']
 ])
 
-const CalculateWinner = board => {
+const calculateWinner = board => {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -31,19 +31,19 @@ const CalculateWinner = board => {
   return null
 }
 
-const winner = computed(() => CalculateWinner(board.value.flat()))
+const winner = computed(() => calculateWinner(board.value.flat()))
 
-const MakeMove = (x, y) => {
+const makeMove = (x, y) => {
   if (winner.value) return
 
   if (board.value[x][y]) return
 
   board.value[x][y] = player.value
 
-  player.value = player.value === 'X' ? 'O' : 'X'
+  player.value = player.value === 'X' ? '0' : 'X'
 }
 
-const ResetGame = () => {
+const resetGame = () => {
   board.value = [
     ['', '', ''],
     ['', '', ''],
@@ -57,25 +57,52 @@ const ResetGame = () => {
   <main class="pt-8 text-center">
     <h1 class="mb-8 text-3xl font-bold uppercase">Tic Tac Toe</h1>
 
-    <h3 class="text-xl mb-4">Player {{ player }}'s turn</h3>
+    <h3 class="text-xl mb-4 flex justify-center">
+      Turno do jogador:
+      <span
+        :class="` ${player === 'X' ? 'text-red-500' : 'text-blue-400'} ml-1`"
+      >
+        {{ player }}
+      </span>
+    </h3>
 
     <div class="flex flex-col items-center mb-8">
       <div v-for="(row, x) in board" :key="x" class="flex">
         <div
           v-for="(cell, y) in row"
           :key="y"
-          @click="MakeMove(x, y)"
+          @click="makeMove(x, y)"
           :class="`border border-white w-24 h-24 hover:bg-gray-700 flex items-center justify-center material-icons-outlined text-4xl cursor-pointer ${
-            cell === 'X' ? 'text-pink-500' : 'text-blue-400'
+            cell === 'X' ? 'text-red-500' : 'text-blue-400'
           }`"
-        ></div>
+        >
+          {{ cell === 'X' ? 'close' : cell === '0' ? 'circle' : '' }}
+        </div>
       </div>
     </div>
+
+    <h2 v-if="winner" class="text-3x1 font-bold mb-8">
+      Jogador
+      <span :class="` ${winner === 'X' ? 'text-red-500' : 'text-blue-400'} `">
+        {{ winner }}
+      </span>
+      ganhou!
+    </h2>
+
+    <button
+      @click="resetGame"
+      class="px-4 py-2 bg-red-500 rounded uppercase font-bold hover:bg-red-700 duration-300"
+    >
+      Resetar Jogo
+    </button>
   </main>
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 html {
-  background: rgb(68, 68, 68);
+  background: #1f2937;
+  color: #fff;
+  font-family: 'Press Start 2P', cursive !important;
 }
 </style>
