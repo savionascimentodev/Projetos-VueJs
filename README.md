@@ -38,7 +38,7 @@ Projeto feito com **Vue.js**(composition api) e **TailwindCss**, que consiste em
 
 <img src="https://raw.githubusercontent.com/savionascimentodev/Projetos-VueJs/main/assets/tic-tac-toe-desktop.png" width="300">
 
-### Api Coin
+### 💰💰 Api Coin
 
 Projeto feito com **Vue.js** e **SpectreCss**, que consiste em uma listagem de uma API de cotação de moerdas, veja o projeto aqui: [Projeto](https://projetos-vue-js-api-coin.vercel.app/), para saber mais sobre o projeto veja o [Readme](https://github.com/savionascimentodev/Projetos-VueJs/tree/main/api-coin) dele.
 
