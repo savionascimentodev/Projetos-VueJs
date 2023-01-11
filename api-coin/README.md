@@ -24,4 +24,4 @@ Projeto com **Vue.js** e **SpectreCss** de uma listagem de moedas, onde a mesma 
 
 ##### Desktop Screenshot
 
-<img src="https://raw.githubusercontent.com/savionascimentodev/Projetos-VueJs/main/assets/api-coin-desktop.png" width="600">
+<img src="https://raw.githubusercontent.com/savionascimentodev/Projetos-VueJs/main/assets/api-coin-desktop.png" width="800">
