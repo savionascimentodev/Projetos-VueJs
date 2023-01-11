@@ -1,24 +1,27 @@
-# api-coin
+<div align="center">
 
-## Project setup
-```
-yarn install
-```
+# 💰💰 Api Coin
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+![VueJS](https://img.shields.io/badge/Vue.js-35495E?style=flat&logo=vuedotjs&logoColor=4FC08D)
+![SpectreeCss](https://img.shields.io/badge/Spectre_Css-5755d9?style=flat&logo=tailwind-css&logoColor=white)
 
-### Compiles and minifies for production
-```
-yarn build
-```
+<p align="center">
 
-### Lints and fixes files
-```
-yarn lint
-```
+</div>
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Projeto com **Vue.js** e **SpectreCss** de uma listagem de moedas, onde a mesma retorna a cotação de moedas da [AwesomeApi](https://docs.awesomeapi.com.br/api-de-moedas) consumindo com o **Axios**.
+
+---
+
+### Funcionalidades
+
+- Listagem de Cotação de Moedas;
+- Axios;
+- Lib Spectre Css;
+- Awesome Api;
+
+### 🚧 Layout
+
+##### Desktop Screenshot
+
+<img src="https://raw.githubusercontent.com/savionascimentodev/Projetos-VueJs/main/assets/api-coin-desktop.png" width="400">

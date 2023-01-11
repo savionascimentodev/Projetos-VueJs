@@ -1,26 +1,59 @@
 <template>
-  <div class="container grid-lg my-2 py-2">
-    <table class="table table-striped table-hover">
-      <thead>
-        <tr>
-          <th>name</th>
-          <th>genre</th>
-          <th>release date</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="active">
-          <td>The Shawshank Redemption</td>
-          <td>Crime, Drama</td>
-          <td>14 October 1994</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="container">
+    <div class="container-header text-center">
+      <h4>Api Coin</h4>
+    </div>
+    <div class="container-body">
+      <TableCoins :coins="coins" />
+    </div>
   </div>
 </template>
 
 <script>
+import Api from '@/server/api'
+import TableCoins from '@/components/TableCoins.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    TableCoins
+  },
+  data() {
+    return {
+      coins: [],
+      isLoading: false,
+      cor: '#808080'
+    }
+  },
+  created() {
+    this.chamarApi()
+  },
+  methods: {
+    async chamarApi() {
+      const response = await Api.all()
+      this.coins = response.data
+      this.isLoading = true
+    }
+  }
 }
 </script>
+<style>
+html {
+  background: linear-gradient(to right, #434343 0%, black 100%) !important;
+}
+
+.container {
+  font-family: monospace;
+  color: #fff;
+  background: linear-gradient(to right, #434343 0%, black 100%) !important;
+}
+
+.container-header {
+  padding-top: 2rem;
+}
+
+.container-body {
+  overflow: hidden;
+  padding: 0rem 12rem 2rem 12rem;
+}
+</style>
