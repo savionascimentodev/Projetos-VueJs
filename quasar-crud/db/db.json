@@ -1,0 +1,46 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Curso Quasar",
+      "author": "Savio",
+      "content": "Este é um artigo sobre Vue3, Quasar e API REST."
+    },
+    {
+      "id": 2,
+      "title": "Curso VueJs",
+      "author": "Savio",
+      "content": "Este é um artigo sobre Vue3"
+    },
+    {
+      "id": 3,
+      "title": "Curso React Native",
+      "author": "Savio",
+      "content": "Este é um artigo sobre React Native"
+    },
+    {
+      "id": 4,
+      "title": "Curso React",
+      "author": "Savio",
+      "content": "Este é um artigo sobre React."
+    },
+    {
+      "id": 5,
+      "title": "Curso JavaScript",
+      "author": "Savio",
+      "content": "Este é um artigo sobre JavaScript"
+    },
+    {
+      "id": 6,
+      "title": "Curso Html",
+      "author": "Savio",
+      "content": "Este é um artigo sobre HTML"
+    },
+    {
+      "id": 8,
+      "title": "Curso Sass",
+      "author": "Savio",
+      "content": "Este é um artigo sobre Sass"
+    }
+  ]
+}
